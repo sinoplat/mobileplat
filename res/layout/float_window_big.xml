@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/big_window_layout"
+    android:layout_width="200dip"
+    android:layout_height="200dip"
+    android:background="@drawable/application_bg_welcome"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/float_vpnStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:text="VPN已连接"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/float_controlVPN"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/common_btn_green"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:text="关闭VPN"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/float_closeFloat"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/common_btn_green"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="12dip"
+        android:text="关闭悬浮窗"
+        android:textSize="16sp" />
+		
+    <Button
+        android:id="@+id/float_back"
+        android:layout_width="120dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:layout_marginTop="12dip"
+        android:background="@drawable/common_btn_green"
+        android:textColor="@color/white"
+        android:text="返回"
+        android:textSize="16sp"
+        android:layout_marginBottom="15dp"
+         />
+
+</LinearLayout>

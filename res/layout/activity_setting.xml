@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/titlebar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/home_bg" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:orientation="horizontal" >
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:background="#e7e7e7" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+				android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:layout_marginTop="25dp"
+                    android:background="#e7e7e7" />
+
+                <LinearLayout
+                    android:id="@+id/setting_download"
+                    style="@style/option_item_rl"
+                    android:padding="13dp" >
+
+                    <LinearLayout
+                        style="@style/option_item_text"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            style="@style/option_item_text"
+                            android:gravity="top"
+                            android:text="@string/download_set" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="bottom"
+                            android:paddingBottom="0dp"
+                            android:text="@string/download_tip"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/setting_download_switch"
+                        style="@style/option_operate_switch"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/off" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#e7e7e7" />
+
+                <LinearLayout
+                    android:id="@+id/setting_checknew"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        style="@style/option_item_text"
+                        android:layout_weight="1"
+                        android:text="@string/check_new_version" />
+
+                    <TextView
+                        android:id="@+id/versionno"
+                        style="@style/option_operate_img"
+                        android:layout_width="wrap_content"
+                        android:text="0.0.7" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#e7e7e7" />
+
+                <LinearLayout
+                    android:id="@+id/setting_modify_passord"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        style="@style/option_item_text"
+                        android:layout_weight="1"
+                        android:text="@string/modify_password" />
+
+                    <ImageView
+                        style="@style/option_operate_img"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#e7e7e7" />
+
+                <LinearLayout
+                    android:id="@+id/setting_gesture_pass"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        style="@style/option_item_text"
+                        android:layout_weight="1"
+                        android:text="@string/setting_gesture_password" />
+
+                    <ImageView
+                        style="@style/option_operate_img"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#e7e7e7" />
+
+                <LinearLayout
+                    android:id="@+id/setting_gesture_pass_lock"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        style="@style/option_item_text"
+                        android:layout_weight="1"
+                        android:text="@string/gesture_password_lock" />
+
+                    
+                    <ImageView
+                        android:id="@+id/setting_guesture_lockswitch"
+                        style="@style/option_operate_switch"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/off" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#e7e7e7" />
+                
+                <LinearLayout
+                    android:id="@+id/setting_is_open_float_ll"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        style="@style/option_item_text"
+                        android:layout_weight="1"
+                        android:text="@string/is_open_float" />
+
+                    
+                    <ImageView
+                        android:id="@+id/setting_is_open_float_iv"
+                        style="@style/option_operate_switch"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/on" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#e7e7e7" />
+
+                <LinearLayout
+                    android:id="@+id/setting_linker_backup"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        style="@style/option_item_text"
+                        android:layout_weight="1"
+                        android:text="@string/linker_backup" />
+
+                    <ImageView
+                        style="@style/option_operate_img"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#e7e7e7" />
+
+                <LinearLayout
+                    android:id="@+id/setting_linker_recover"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        style="@style/option_item_text"
+                        android:layout_weight="1"
+                        android:text="@string/linker_recover" />
+
+                    <ImageView
+                        style="@style/option_operate_img"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#e7e7e7" />
+
+                <LinearLayout
+                    android:id="@+id/setting_help"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        style="@style/option_item_text"
+                        android:layout_weight="1"
+                        android:text="@string/help" />
+
+                    <ImageView
+                        style="@style/option_operate_img"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#e7e7e7" />
+
+                <LinearLayout
+                    android:id="@+id/setting_quit"
+                    style="@style/option_item_rl" >
+
+                    <TextView
+                        style="@style/option_item_text"
+                        android:layout_weight="1"
+                        android:text="@string/quit" />
+
+                    <ImageView
+                        style="@style/option_operate_img"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/ic_arrow_right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="#e7e7e7" />
+            </LinearLayout>
+            
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_marginTop="25dp"
+                android:background="#e7e7e7" />
+            
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

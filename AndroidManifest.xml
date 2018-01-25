@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sinosoft.gyicPlat"
+    android:hardwareAccelerated="true"
+    android:versionCode="10"
+    android:versionName="0.1.0"
+    android:windowSoftInputMode="adjustPan" >
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+	<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+	
+    <application
+        android:name="com.way.pattern.App"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon"
+        android:label="移动应用平台"
+        android:persistent="true" >
+        
+        <activity android:name=".MainActivity" android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        
+        <activity
+            android:name="com.sinosoft.mobileshop.activity.WelcomeActivity"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:label="移动应用平台"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+         
+        <activity
+            android:name="Notify"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.sinosoft.phoneGapPlugins.android.SmsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.way.pattern.UnlockGesturePasswordActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.way.pattern.CreateGesturePasswordActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.way.pattern.GuideGesturePasswordActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.way.pattern.ResetGesturePasswordActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name="org.androidpn.client.NotificationService"
+            android:enabled="true"
+            android:label="NotificationService" >
+            <intent-filter>
+                <action android:name="org.androidpn.client.NotificationService" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name="com.sinosoft.phoneGapPlugins.android.OtherBroadCast" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.sinosoft.phoneGapPlugins.android.BootBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="com.sinosoft.phoneGapPlugins.pgsqliteplugin.PrpmRegistorUserProvider"
+            android:authorities="com.sinosoft.phoneGapPlugins.pgsqliteplugin.PrpmRegistorUserProvidere" />
+        <provider
+            android:name="com.sinosoft.phoneGapPlugins.pgsqliteplugin.VPNAddressProvider"
+            android:authorities="com.sinosoft.phoneGapPlugins.pgsqliteplugin.VPNAddressProvider" />
+        <provider
+            android:name="com.sinosoft.phoneGapPlugins.pgsqliteplugin.ServiceAddressProvider"
+            android:authorities="com.sinosoft.phoneGapPlugins.pgsqliteplugin.ServiceAddressProvider" />
+
+        <activity android:name="com.mindpin.android.filedownloader.ui.DownloadActivity" >
+        </activity>
+        <activity android:name="com.mindpin.android.filedownloader.ui.TargetActivity" />
+        <activity android:name="com.mindpin.android.filedownloader.ui.SystemDownloadActivity" >
+        </activity>
+        <activity android:name="com.mindpin.android.filedownloader.ui.EntryActivity" >
+        </activity>
+        <activity android:name="com.mindpin.android.filedownloader.ui.DemoActivity" />
+        <activity android:name="com.sinosoft.phoneGapPlugins.download.MainActivity" >
+        </activity>
+        <activity android:name="com.sinosoft.mobileshop.activity.SettingActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.sinosoft.mobileshop.activity.AdvicesActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.sinosoft.mobileshop.activity.QrcodeActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.sinosoft.mobileshop.activity.NewsDetailActivity" android:screenOrientation="portrait">
+        </activity>
+        <activity android:name="com.sinosoft.mobileshop.activity.AppDetailActivity" android:screenOrientation="portrait">
+        </activity>
+        
+        <service android:name="com.mindpin.android.filedownloader.DownloadService" />
+        <service android:name="com.sinosoft.traffic.TrafficService" />
+
+        <receiver
+            android:name="com.mindpin.android.filedownloader.DownloadProgressNotificationWidget"
+            android:label="DownloadProgressNotificationWidget" >
+            <intent-filter>
+                <action android:name="app.action.download_progress_notification_widget" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.mindpin.android.filedownloader.DownloadDoneNotification"
+            android:label="DownloadDoneNotification" >
+            <intent-filter>
+                <action android:name="app.action.download_done_notification" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.sinosoft.mobileshop.service.receiver.InstallReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name="com.sinosoft.mobileshop.service.receiver.WakeUpReceiver"
+            android:process=":watch">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT"/>
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.sinosoft.mobileshop.service.receiver.WakeUpReceiver$WakeUpAutoStartReceiver"
+            android:process=":watch">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.sinosoft.mobileshop.service.VpnWorkService"/>
+
+        <service android:name="com.sinosoft.mobileshop.service.VpnWorkService$WorkNotificationService"/>
+
+        <service
+            android:name="com.sinosoft.mobileshop.service.WatchDaemonService"
+            android:process=":watch"/>
+
+        <service
+            android:name="com.sinosoft.mobileshop.service.WatchDaemonService$WatchDogNotificationService"
+            android:process=":watch"/>
+            
+            
+        <service
+            android:name="com.sangfor.ssl.l3vpn.service.EasyappSvpnService"
+            android:permission="android.permission.BIND_VPN_SERVICE" >
+            <intent-filter>
+                <action android:name="com.sangfor.ssl.l3vpn.service.EasyappSvpnService" />
+            </intent-filter>
+        </service>
+        
+        
+    </application>
+
+    <uses-sdk
+        android:minSdkVersion="10"
+        android:targetSdkVersion="19" />
+
+</manifest>
